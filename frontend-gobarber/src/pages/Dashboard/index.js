@@ -7,7 +7,6 @@ import {
     setMinutes,
     setSeconds,
     isBefore,
-    isEqual,
     parseISO,
 } from 'date-fns';
 import pt from 'date-fns/locale/pt';
@@ -47,12 +46,19 @@ export default function Dashboard() {
                 return {
                     time: `${hour}:00h`,
                     past: isBefore(compareDate, new Date()),
-                    appointment: response.data.find(a =>
-                        isEqual(parseISO(a.date), compareDate)
+                    appointment: response.data.find(
+                        a =>
+                            parseISO(a.date).toString() ===
+                            compareDate.toString()
                     ),
                 };
             });
-            console.log(data);
+            /** Caso de errado volte até aqui
+ *  find(a =>
+                        isEqual(parseISO(a.date), compareDate)
+                    ),
+ *
+ */
             setSchedule(data);
         }
 
