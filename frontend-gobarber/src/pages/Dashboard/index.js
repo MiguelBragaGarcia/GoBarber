@@ -53,12 +53,7 @@ export default function Dashboard() {
                     ),
                 };
             });
-            /** Caso de errado volte até aqui
- *  find(a =>
-                        isEqual(parseISO(a.date), compareDate)
-                    ),
- *
- */
+
             setSchedule(data);
         }
 
