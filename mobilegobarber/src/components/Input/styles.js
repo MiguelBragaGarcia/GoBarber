@@ -10,12 +10,11 @@ export const Container = styled.View`
     align-items: center;
 `;
 
-export default TInput = styled.TextInput.attrs({
+export const TInput = styled.TextInput.attrs({
     placeholderTextColor: 'rgba(255,255,255,0.8)',
 })`
     flex: 1;
     font-size: 15px;
-    margin-left: 10px;
     margin-left: 10px;
     color: #fff;
 `;
