@@ -7,6 +7,8 @@ import {
     setMinutes,
     setSeconds,
     isBefore,
+    isEqual,
+    setMilliseconds,
     parseISO,
 } from 'date-fns';
 import pt from 'date-fns/locale/pt';
@@ -37,8 +39,8 @@ export default function Dashboard() {
             const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
             const data = range.map(hour => {
-                const checkDate = setSeconds(
-                    setMinutes(setHours(date, hour), 0),
+                const checkDate = setMilliseconds(
+                    setSeconds(setMinutes(setHours(date, hour), 0), 0),
                     0
                 );
                 const compareDate = utcToZonedTime(checkDate, timezone);
@@ -46,10 +48,8 @@ export default function Dashboard() {
                 return {
                     time: `${hour}:00h`,
                     past: isBefore(compareDate, new Date()),
-                    appointment: response.data.find(
-                        a =>
-                            parseISO(a.date).toString() ===
-                            compareDate.toString()
+                    appointment: response.data.find(a =>
+                        isEqual(parseISO(a.date), compareDate)
                     ),
                 };
             });
