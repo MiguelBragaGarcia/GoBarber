@@ -14,13 +14,19 @@ export default function Appointment({data, onCancel}) {
         });
     }, [data.date]);
 
+    function urlFormatted() {
+        const avatarUrl = data.provider.avatar.url;
+        const newAvatarUrl = avatarUrl.replace('localhost', '10.0.2.2');
+        return newAvatarUrl;
+    }
+
     return (
         <Container past={data.past}>
             <Left>
                 <Avatar
                     source={{
                         uri: data.provider.avatar
-                            ? 'http://10.0.2.2:3330/files/64fd256744ecc8cee3b7a45517b1968b.jpg'
+                            ? urlFormatted()
                             : `https://api.adorable.io/avatars/50/${data.provider.name}.png`,
                     }}></Avatar>
 
