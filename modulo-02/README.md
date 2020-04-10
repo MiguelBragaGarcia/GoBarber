@@ -13,8 +13,8 @@
 </li>
 </li>
 
-<li><a href="">Node JS</a></li>
-<li><a href="">Yarn</a></li>
+<li><a href="https://nodejs.org/en/">Node JS</a></li>
+<li><a href="https://classic.yarnpkg.com/pt-BR/docs/install/">Yarn</a></li>
 </ul>
 
 <p>Após instalar essas dependências é necessário rodar o comando: yarn install ou npm install para instalar todas as dependências do projeto</p>
