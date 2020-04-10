@@ -6,12 +6,12 @@
 <h2>Como rodar o projeto</h2>
 <p>Para rodar o projeto é necessário que se clone o projeto para seu computador e tenha instalado as seguintes dependências: </p>
 <ul>
-<li>
-<li><a href="https://www.docker.com/get-started">Docker</a>
-<li>Imagem Postgres</li>
-<li>Imagem Redis</li>
-<li>Imagem Mongo</li>
-</li>
+
+<li style="list-style: none"><a href="https://www.docker.com/get-started">Docker</a>
+<li>Imagem docker postgres</li>
+<li>Imagem docker redis</li>
+<li>Imagem docker mongo</li>
+
 </li>
 
 <li><a href="">Node JS</a></li>
